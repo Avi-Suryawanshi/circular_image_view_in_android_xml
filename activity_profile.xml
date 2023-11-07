@@ -6,15 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Profile">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:background="@drawable/curve_background"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,25 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/backBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableStart="@drawable/baseline_arrow_back_24"
-            android:padding="@dimen/size_10_dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/size_10_dp"
-            android:fontFamily="sans-serif-medium"
-            android:text="Profile"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
         <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="100dp"
@@ -51,7 +23,7 @@
             android:layout_marginTop="70dp"
             android:background="@drawable/circular_background">
 
-            <com.satmatgroup.satmatmr.CircularImageView
+            <com.example.yourProjectName.CircularImageView
                 android:id="@+id/profileImageView"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -66,160 +38,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="@dimen/size_10_dp"
                 />
-
-        </RelativeLayout>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/relativeLayout"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="5dp"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/size_10_dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/size_10_dp"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/size_10_dp"
-                        android:layout_weight="1"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="Name  "
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="Avinash Suryawanshi"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_margin="@dimen/size_10_dp"
-                    android:background="@color/gray" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/size_10_dp"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/size_10_dp"
-                        android:layout_weight="1"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="Email  "
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="avinashsuryawanshi@gamil.com"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_margin="@dimen/size_10_dp"
-                    android:background="@color/gray"
-                    android:fontFamily="sans-serif-medium" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/size_10_dp"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/size_10_dp"
-                        android:layout_weight="1"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="Phone  "
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="9503058232"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_margin="@dimen/size_10_dp"
-                    android:background="@color/gray" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/size_10_dp"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/size_10_dp"
-                        android:layout_weight="1"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="Address  "
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="Katraj, Pune"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="@dimen/size_10_dp"
-                    android:layout_marginTop="@dimen/size_10_dp"
-                    android:layout_marginEnd="@dimen/size_10_dp"
-                    android:layout_marginBottom="@dimen/size_30_dp"
-                    android:background="@color/gray" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
+            
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
