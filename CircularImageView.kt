@@ -26,21 +26,27 @@ class CircularImageView : AppCompatImageView {
             return
         }
 
-        val bitmap = (drawable as BitmapDrawable).bitmap
-        val radius = width.coerceAtLeast(height) / 2
+        if (drawable is BitmapDrawable) {
+            // Handle BitmapDrawable
+            val bitmap = drawable.bitmap
+            val radius = width.coerceAtLeast(height) / 2
+            
+            val scaledBitmap = scaleCenterCrop(bitmap, width, height)
 
-        // Scale and center the source bitmap
-        val scaledBitmap = scaleCenterCrop(bitmap, width, height)
+            // Reset the path and create a circular clipping path
+            path.reset()
+            path.addCircle(width.toFloat() / 2, height.toFloat() / 2, radius.toFloat(), Path.Direction.CW)
 
-        // Reset the path and create a circular clipping path
-        path.reset()
-        path.addCircle(width.toFloat() / 2, height.toFloat() / 2, radius.toFloat(), Path.Direction.CW)
+            // Clip the canvas to the circular path
+            canvas.clipPath(path)
 
-        // Clip the canvas to the circular path
-        canvas.clipPath(path)
-
-        // Draw the scaled and centered bitmap within the circular path
-        canvas.drawBitmap(scaledBitmap, 0f, 0f, paint)
+            // Draw the scaled and centered bitmap within the circular path
+            canvas.drawBitmap(scaledBitmap, 0f, 0f, paint)
+        } else {
+            // Handle other drawable types (e.g., VectorDrawable)
+            // You can choose what to do in this case, e.g., display a placeholder image or handle differently.
+            super.onDraw(canvas)
+        }
     }
 
     private fun scaleCenterCrop(source: Bitmap, newWidth: Int, newHeight: Int): Bitmap {
